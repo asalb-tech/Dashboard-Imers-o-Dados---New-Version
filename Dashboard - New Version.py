@@ -2,11 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-cargo_escolhido = " "
 # --- Configuração da Página ---
 # Define o título da página, o ícone e o layout para ocupar a largura inteira.
 st.set_page_config(
-    page_title="Dashboard de Salários na Áre de {cargo_escolhido}",
+    page_title="Dashboard de Salários na Área de Dados",
     page_icon="📊",
     layout="wide",
 )
@@ -25,7 +24,7 @@ anos_selecionados = st.sidebar.multiselect("Ano", anos_disponiveis, default=anos
 # Gerado menu interativo para escolha dos cargos
 cargos_disponiveis = sorted(df['cargo'].unique())
 cargos_opcoes = ["Todos"] + cargos_disponiveis
-cargo_selecionado_str = st.sidebar.selectbox("Cargo", cargos_opcoes, index=0)
+cargo_selecionado_str = st.sidebar.selectbox("Escolha o Cargo", cargos_opcoes, index=0)
 
 # Ajusta a variável para o filtro e para o título
 if cargo_selecionado_str == "Todos":
